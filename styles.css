@@ -1,0 +1,53 @@
+*{
+    font-family: monospace;
+}
+body{
+    background: rgb(68, 62, 62);
+}
+header{
+    font-size: 1.5rem;
+    text-transform: lowercase;
+    margin: 0 auto;
+    text-align: center;
+    border: 5px solid white;
+    background-color: rgb(226, 160, 235);
+    width: 30%;
+    margin-top: 10vh;
+    border-radius: 10px;
+}
+
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+}
+
+#game-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50vh;
+}
+
+.box{
+    flex: 0 0 32%;
+    height: 200px;
+    width: 100px;
+    background-color: rgb(218, 207, 207);
+    border: 2px solid rgb(68, 67, 67);
+    font-size: 15rem;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+footer{
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin-top: 12vh;
+    text-transform: lowercase;
+
+}
+
+
