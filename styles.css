@@ -1,5 +1,6 @@
 *{
     font-family: monospace;
+    text-transform: lowercase;
 }
 body{
     background: rgb(68, 62, 62);
@@ -27,9 +28,43 @@ header{
     display: flex;
     flex-wrap: wrap;
     width: 50vh;
+    height: 50vh;
+    border: 2px solid white;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    justify-content: center;
+}
+
+#game-container button{
+    width: 200px;
+    height: 200px;
+    color: white;
+    font-size: 10rem;
+    background-color: transparent;
+    border: 5px solid white;
+    margin-right: 10px;
+}
+
+button:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+#game-board{
+    display: none;
+    flex-wrap: wrap;
+    width: 50vh;
+    height: 50vh;
+    text-align: center;
+    color: rgb(36, 34, 34);
+    font-size: 1.5rem;
+    justify-content: center;
+    
 }
 
 .box{
+    display: flex;
     flex: 0 0 32%;
     height: 200px;
     width: 100px;
