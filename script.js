@@ -13,7 +13,6 @@ boxes.forEach(item => {
         if(ctr % 2 !== 0){
             item.innerHTML = 'X';
             box_arr.push('X')
-            item.removeEventListener('click', true);
         }
         else{
             item.innerHTML = 'O';
