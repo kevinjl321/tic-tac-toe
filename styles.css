@@ -2,9 +2,11 @@
     font-family: monospace;
     text-transform: lowercase;
 }
+
 body{
     background: rgb(68, 62, 62);
 }
+
 header{
     font-size: 1.5rem;
     text-transform: lowercase;
@@ -15,6 +17,20 @@ header{
     width: 30%;
     margin-top: 10vh;
     border-radius: 10px;
+}
+#buttons{
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh;
+}
+
+#buttons button{
+    width: 150px;
+    height: 50px;
+    font-size: 2rem;
+    color: white;
+    background-color: transparent;
+
 }
 
 #container{
@@ -54,7 +70,7 @@ button:hover{
 #game-board{
     display: none;
     flex-wrap: wrap;
-    width: 50vh;
+    width: 30vw;
     height: 50vh;
     text-align: center;
     color: rgb(36, 34, 34);
@@ -65,14 +81,13 @@ button:hover{
 
 .box{
     display: flex;
-    flex: 0 0 32%;
-    height: 200px;
+    flex: 0 0 30%;
+    height: 210px;
     width: 100px;
     background-color: rgb(218, 207, 207);
     border: 2px solid rgb(68, 67, 67);
-    font-size: 15rem;
+    font-size: 10rem;
     justify-content: center;
-    text-align: center;
     align-items: center;
 }
 
@@ -80,9 +95,8 @@ footer{
     font-size: 20px;
     color: white;
     text-align: center;
-    margin-top: 12vh;
+    margin-top: 7vh;
     text-transform: lowercase;
-
 }
 
 

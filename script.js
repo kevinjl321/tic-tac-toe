@@ -3,6 +3,7 @@ const choiceX = document.getElementById("choice-x");
 const choiceY = document.getElementById("choice-o");
 const gameBoard = document.getElementById("game-board");
 const gameContainer = document.getElementById("game-container");
+const reset = document.getElementById("reset");
 
 let ctr = 0;
 let box_arr = [''];
@@ -24,8 +25,14 @@ boxes.forEach(item => {
 function activateGame(){
     gameContainer.style.display = 'none';
     gameBoard.style.display = 'flex';
+
+    boxes.forEach(item =>{
+        item.textContent = '';
+    })
 }
 
 choiceX.addEventListener("click", activateGame);
 choiceY.addEventListener("click", activateGame);
+
+reset.addEventListener("click", activateGame);
 
