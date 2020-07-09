@@ -4,6 +4,8 @@ const choiceY = document.getElementById("choice-o");
 const gameBoard = document.getElementById("game-board");
 const gameContainer = document.getElementById("game-container");
 const reset = document.getElementById("reset");
+const restart = document.getElementById("restart");
+const buttons = document.getElementById("buttons");
 
 let ctr = 0;
 let box_arr = [''];
@@ -29,10 +31,24 @@ function activateGame(){
     boxes.forEach(item =>{
         item.textContent = '';
     })
+
+    buttons.style.display = 'flex';
+}
+
+function restartGame(){
+    gameContainer.style.display = 'flex';
+    gameBoard.style.display = 'none';
 }
 
 choiceX.addEventListener("click", activateGame);
 choiceY.addEventListener("click", activateGame);
 
 reset.addEventListener("click", activateGame);
+restart.addEventListener("click", restartGame);
 
+/*
+To Do:
+    1. Add a function that "turns off" event listeners for the box class after one click.
+    2. Add a function that checks for a win every move.
+    3. Add additional functions that are needed, then organize into modules and factory functions.
+*/
