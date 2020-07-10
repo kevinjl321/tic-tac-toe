@@ -37,7 +37,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10vh;
+    margin-top: 8vh;
 }
 
 #game-container{
@@ -76,13 +76,12 @@ button:hover{
     color: rgb(36, 34, 34);
     font-size: 1.5rem;
     justify-content: center;
-    
 }
 
 .box{
     display: flex;
     flex: 0 0 30%;
-    height: 200px;
+    height: 215px;
     width: 150px;
     background-color: rgb(218, 207, 207);
     border: 2px solid rgb(68, 67, 67);

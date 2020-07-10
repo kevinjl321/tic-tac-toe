@@ -7,22 +7,30 @@ const reset = document.getElementById("reset");
 const restart = document.getElementById("restart");
 const buttons = document.getElementById("buttons");
 
+let p1Choice;
+let p2Choice; 
+
 let ctr = 0;
 let box_arr = [''];
 
-boxes.forEach(item => {
-    item.addEventListener('click', event =>{
-        ctr++;
-        if(ctr % 2 !== 0){
-            item.innerHTML = 'X';
-            box_arr.push('X')
-        }
-        else{
-            item.innerHTML = 'O';
-            box_arr.push('O');
-        }
-    });
-});
+//functions
+function move(item){
+    ctr++;
+    if(ctr % 2 !== 0){
+        item.innerHTML = p1Choice;
+        box_arr.push(p1Choice);
+        checkWin();
+    }
+    else if (ctr % 2 === 0){
+        item.innerHTML = p2Choice;
+        box_arr.push(p2Choice);
+        checkWin();
+    }
+}
+
+function checkWin(){
+
+}
 
 function activateGame(){
     gameContainer.style.display = 'none';
@@ -40,8 +48,24 @@ function restartGame(){
     gameBoard.style.display = 'none';
 }
 
-choiceX.addEventListener("click", activateGame);
-choiceY.addEventListener("click", activateGame);
+//Event Listeners
+boxes.forEach(item => {
+    item.addEventListener('click', event =>{
+        move(item);
+    });
+});
+
+choiceX.addEventListener("click", event =>{
+    p1Choice = 'X';
+    p2Choice = 'O';
+    activateGame();
+});
+
+choiceY.addEventListener("click", event =>{
+    p2Choice = 'X';
+    p1Choice = 'O';
+    activateGame(); 
+});
 
 reset.addEventListener("click", activateGame);
 restart.addEventListener("click", restartGame);
@@ -49,6 +73,5 @@ restart.addEventListener("click", restartGame);
 /*
 To Do:
     1. Add a function that "turns off" event listeners for the box class after one click.
-    2. Add a function that checks for a win every move.
-    3. Add additional functions that are needed, then organize into modules and factory functions.
+    2. Add additional functions that are needed, then organize into modules and factory functions.
 */
