@@ -5,7 +5,6 @@ const gameBoard = document.getElementById("game-board");
 const gameContainer = document.getElementById("game-container");
 const reset = document.getElementById("reset");
 const restart = document.getElementById("restart");
-const buttons = document.getElementById("buttons");
 
 let p1Choice;
 let p2Choice; 
@@ -17,58 +16,41 @@ let box_arr = [''];
 function move(item){
     ctr++;
     if(ctr % 2 !== 0){
-        item.innerHTML = p1Choice;
-        box_arr.push(p1Choice);
-        checkWin();
+        item.innerHTML = 'X';
     }
-    else if (ctr % 2 === 0){
-        item.innerHTML = p2Choice;
-        box_arr.push(p2Choice);
-        checkWin();
+    else if(ctr % 2 === 0){
+        item.innerHTML = 'O';
     }
 }
 
-function checkWin(){
-
-}
-
-function activateGame(){
-    gameContainer.style.display = 'none';
-    gameBoard.style.display = 'flex';
-
+function clearBoard(){
     boxes.forEach(item =>{
         item.textContent = '';
     })
-
-    buttons.style.display = 'flex';
 }
 
-function restartGame(){
-    gameContainer.style.display = 'flex';
+function startGame(){
     gameBoard.style.display = 'none';
+    gameContainer.style.display = 'flex';
+
+    if(p1Choice === 'X'){
+        p2Choice = 'O';
+    }
+    else{
+        p2Choice = 'X';
+    }
+
+    clearBoard();
 }
 
-//Event Listeners
+//event listeners
 boxes.forEach(item => {
     item.addEventListener('click', event =>{
         move(item);
     });
 });
 
-choiceX.addEventListener("click", event =>{
-    p1Choice = 'X';
-    p2Choice = 'O';
-    activateGame();
-});
-
-choiceY.addEventListener("click", event =>{
-    p2Choice = 'X';
-    p1Choice = 'O';
-    activateGame(); 
-});
-
-reset.addEventListener("click", activateGame);
-restart.addEventListener("click", restartGame);
+reset.addEventListener("click", clearBoard);
 
 /*
 To Do:
