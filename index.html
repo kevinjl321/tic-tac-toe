@@ -1,40 +1,39 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tic-Tac-Toe</title>
         <link rel="stylesheet" href="styles.css">
     </head>
-    <header>
-        <div id = "head-container">
-            <h1>Tic-Tac-Toe</h1>
-        </div>
-    </header>
     <body>
-        <div id = "container">
-            <div id = "game-board">
-                <div data-index-number = "0" class = "box"></div>
-                <div data-index-number = "1" class = "box"></div>
-                <div data-index-number = "2" class = "box"></div>
-                <div data-index-number = "3" class = "box"></div>
-                <div data-index-number = "4" class = "box"></div>
-                <div data-index-number = "5" class = "box"></div>
-                <div data-index-number = "6" class = "box"></div>
-                <div data-index-number = "7" class = "box"></div>
-                <div data-index-number = "8" class = "box"></div>
+        <div id="player1"><div id="playerOne" onclick="gameBoard.updatePlayerName(this)" >Player 1</div>
+            <div id="score1">score: 0</div>
+        </div>
+        <div id="player2"><div id="playerTwo" onclick="gameBoard.updatePlayerName(this)">Player 2</div>
+            <div id="score2">score: 0</div>
+        </div>
+        <div id="announcementsContainer">
+            <div id="announcement">_</div>
+        </div>
+        <div id="gameContainer">
+            <div id="gameBoard">
+                <div data-index-number="0" onclick="gameFlow.placeMarker(this)" class="field"></div>
+                <div data-index-number="1" onclick="gameFlow.placeMarker(this)" class="field"></div>
+                <div data-index-number="2" onclick="gameFlow.placeMarker(this)" class="field"></div>
+                <div data-index-number="3" onclick="gameFlow.placeMarker(this)" class="field"></div>
+                <div data-index-number="4" onclick="gameFlow.placeMarker(this)" class="field"></div>
+                <div data-index-number="5" onclick="gameFlow.placeMarker(this)" class="field"></div>
+                <div data-index-number="6" onclick="gameFlow.placeMarker(this)" class="field"></div>
+                <div data-index-number="7" onclick="gameFlow.placeMarker(this)" class="field"></div>
+                <div data-index-number="8" onclick="gameFlow.placeMarker(this)" class="field"></div>
+            </div>
+            <div id="buttons">
+                <button onclick="gameFlow.nextRound()">Next Round</button>
+                <button onclick="gameFlow.reset()">Reset</button>
             </div>
         </div>
 
-        <div id = "buttons">
-            <button id = "reset">reset board</button>
-        </div>
-
+        <script src="script.js"></script>
     </body>
-
-    <script src="script.js" async defer></script>
-
-    <footer>Created by Kevin Lan</a></footer>
 </html>
